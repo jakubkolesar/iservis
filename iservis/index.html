@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <title>iServis Prešov</title>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body id="intro">
+    <nav class="navbar" id="myTopnav">
+        <div class="logo">iServis</div>
+        <ul class="menu-list">
+            <li><a href="#intro">Domov</a></li>
+            <li><a href="#sluzby">Služby</a></li>
+            <li><a href="#ceny">Cenník</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            
+        </ul>
+        <div class="burger" onclick="background()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="about">
+        <div class="aboutwrap" >
+            <h1 class="title welcome" data-aos="fade-in" data-aos-delay="300">VITAJTE NA STRÁNKACH ISERVIS PREŠOV</h1>
+            <div class="abouttext" data-aos="fade-in" data-aos-delay="600">                        
+                <p>Sme servis so sídlom v Prešove, špecializujúci sa na opravu mobilných telefónov a zariadení od spoločnosti Apple.</p>
+            </div>
+        </div>
+        <div class="arrow">
+            <a href="#sluzby" class="arrowsipka"><i class="fas fa-sort-down"></i></a>
+        </div>
+    </div>
+    <div class="wrapper" >
+        <div class="title" style="text-align: left;" id="sluzby" data-aos="fade-in">
+            <h1>Služby</h1>
+        </div>
+        <div class="products">
+            <div class="obalovacproduct" data-aos="fade-in" data-aos-delay="300">
+                <img src="images/cleaning.jpg" alt="" class="productimage" >
+                <div class="image_overlay" ">
+                    <div class="productinfo">
+                        <div class="producttitle">
+                            <h1>Vyčistíme !</h1>
+                        </div>
+                        <div class="productdes">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat ornare lacus. Quisque ultricies commodo magna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="obalovacproduct" data-aos="fade-in" data-aos-delay="600">
+                <img src="images/repairing.jpg" alt="" class="productimage">
+                <div class="image_overlay">
+                    <div class="productinfo">
+                        <div class="producttitle">
+                            <h1>Opravíme !</h1>
+                        </div>
+                        <div class="productdes">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat ornare lacus. Quisque ultricies commodo magna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="obalovacproduct" data-aos="fade-in" data-aos-delay="900">
+                <img src="images/diagnosting.jpg" alt="" class="productimage">
+                <div class="image_overlay">
+                    <div class="productinfo">
+                        <div class="producttitle">
+                            <h1>Zistíme problém !</h1>
+                        </div>
+                        <div class="productdes">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat ornare lacus. Quisque ultricies commodo magna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title" style="text-align: left;" id="ceny" data-aos="fade-in">
+            <h1>Cenník</h1>
+        </div>
+        <div class="cennik" data-aos="fade-in" data-aos-delay="300">
+            <div class="container">
+                <div class="item">
+                    <div class="image">
+                        <img src="images/diagnosting.jpg" alt="">
+                    </div>
+                    <div class="itemdescription">
+                        <h1>Čistenie</h1>
+                        <br>
+                        <p>Od 15€</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="images/cleaning.jpg" alt="">
+                    </div>
+                    <div class="itemdescription">
+                        <h1>Oprava displeja</h1>
+                        <br>
+                        <p>Od 70€</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item">
+                    <div class="image">
+                        <img src="images/diagnosting.jpg" alt="">
+                    </div>
+                    <div class="itemdescription">
+                        <h1>Oprava mikrofónu </h1>
+                        <br>
+                        <p>Od 50€</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="images/diagnosting.jpg" alt="">
+                    </div>
+                    <div class="itemdescription">
+                        <h1>Oprava základnej dosky</h1>
+                        <br>
+                        <p>Od 20€</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item">
+                    <div class="image">
+                        <img src="images/diagnosting.jpg" alt="">
+                    </div>
+                    <div class="itemdescription">
+                        <h1>Výmena batérie</h1>
+                        <br>
+                        <p>Od 30€</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="images/diagnosting.jpg" alt="">
+                    </div>
+                    <div class="itemdescription">
+                        <h1>Diagnostika</h1>
+                        <br>
+                        <p>Od 20€</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="justify-content: flex-start;">
+                <div class="item button" style="width: 150px;">
+                    <a href="objednavka.html" class="link">
+                        Objednať
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="title" style="text-align: left;" id="kontakt" data-aos="fade-in">
+            <h1>Kontaktujte nás</h1>
+        </div>
+        <div class="kontakt" data-aos="fade-in">
+            <div class="obalovackon">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2202.3007596001116!2d21.26248092711536!3d48.9726817737977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473eeda56ef815a9%3A0x16d5aa0d731f0fc9!2zU2_Evm7DoSA0MTUsIDA4MCAwNSBQcmXFoW92LVNvbGl2YXI!5e0!3m2!1ssk!2ssk!4v1611073982214!5m2!1ssk!2ssk"  style="width: 100%;"></iframe>
+                </div>
+                <div class="formular">
+                    <div class="form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" required="required"/>
+                                <label for="input" class="control-label">Meno</label><i class="bar"></i>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" required="required"/>
+                                <label for="input" class="control-label">Priezvisko</label><i class="bar"></i>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" required="required"/>
+                                <label for="input" class="control-label">E-mail</label><i class="bar"></i>
+                            </div>
+                            <div class="form-group">
+                                <textarea required="required"></textarea>
+                                <label for="textarea" class="control-label">Váš podnet</label><i class="bar"></i>
+                            </div>
+                            <div class="button-container">
+                                <button type="button" class="button"><span>Odoslať</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="footer">
+    <div class="top">
+        <div class="icons">
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-pinterest"></i></a> 
+        </div>
+        <br>
+        <p>e-mail : kolesar@spse-po.sk</p>
+        <p>telefónne číslo : 0915 354 734</p>
+    </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
