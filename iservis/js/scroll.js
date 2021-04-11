@@ -63,7 +63,7 @@ function background(){
     var path = window.location.pathname;
     var page = path.split("/").pop();
     console.log(page);
-    if(page=="objednavka.html"){
+    if(page=="objednavka.php"){
       $(".navbar").addClass("navbar-white");
       $("li a").addClass("a-black");
     }

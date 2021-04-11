@@ -1,3 +1,15 @@
+<?php
+    require './backend/database.php';
+
+    $sql = 'SELECT * FROM sluzby';
+
+    $arr = array();
+
+    $retval = mysqli_query( $database, $sql );
+    if(! $retval ) {
+        die('Could not get data: ' . mysql_error());
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,13 +24,17 @@
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
         <title>iServis Prešov</title>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <script>
-            document.getElementById('cars').onclick = function()
-            {
-                var input_val = document.getElementById('input').value;
-                document.getElementById('carr').value = input_val;
+        <style>
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
             }
-            </script>
+            input, select {
+                margin: 1em 0;
+            }
+        </style>
     </head>
 <body onload="navblack()">
     <nav class="navbar" id="myTopnav">
@@ -36,18 +52,38 @@
             <div class="line3"></div>
         </div>
     </nav>
+    <div id="app">
     <div class="objednat">
-        <form action="send">
-            <select id="cars" name="cars">
-                <option value="volvo">Volvo XC90</option>
-                <option value="saab">Saab 95</option>
-                <option value="mercedes">Mercedes SLK</option>
-                <option value="audi">Audi TT</option>
+        <form action="/backend/odoslanie.php" method="post">
+            <input type="text" name="meno" placeholder="meno">
+            <input type="text" name="priezvisko" placeholder="priezvisko">
+            <input type="email" name="email" placeholder="email">
+            <input type="text" name="telefon" placeholder="telefon">
+            <input type="text" name="adresa" placeholder="adresa">
+            <select v-model="data" name="sluzba">
+                <?php
+                    while($data = mysqli_fetch_array($retval)) {
+                        $arr[$data["nazov"]] = $data["cena"];
+                ?>
+                <option value="<?php echo $data["id_sluzby"]; ?>"><?php echo $data["nazov"]; ?></option>
+                <?php
+                    }
+                ?>
             </select>
-            <textarea name="hehe" id="carr" cols="30" rows="10"></textarea>
+            <textarea name="poznamka" id="" cols="30" rows="10" placeholder="poznamka"></textarea>
+            <button type="submit">Odoslať</button>
         </form>
     </div>
+    </div>
 
+<script>
+
+            document.getElementById('cars').onclick = function()
+            {
+                var input_val = document.getElementById('input').value;
+                document.getElementById('carr').value = input_val;
+            }
+</script>    
 <script type="text/javascript" src="js/nav.js"></script>
 <script type="text/javascript" src="js/scroll.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

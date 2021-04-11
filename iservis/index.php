@@ -1,3 +1,16 @@
+<?php
+    require './backend/database.php';
+
+    $sql = 'SELECT * FROM sluzby';
+
+    $retval = mysqli_query( $database, $sql );
+
+    if(! $retval ) {
+        die('Could not get data: ' . mysql_error());
+    }
+    $i = 0;
+    $num_rows = mysqli_num_rows($retval);
+?>
 <!DOCTYPE html>
 
 <html lang="sk">
@@ -91,72 +104,34 @@
             <h1>Cenník</h1>
         </div>
         <div class="cennik" data-aos="fade-in" data-aos-delay="300">
-            <div class="container">
+            <?php
+            while($data = mysqli_fetch_array($retval)) {
+                if ($i % 2 == 0) {
+            ?>
+                    <div class="container">
+            <?php
+                }
+            ?>
                 <div class="item">
                     <div class="image">
-                        <img src="images/diagnosting.jpg" alt="">
+                        <img src="<?php echo $data["obrazok"] ?>" alt="">
                     </div>
                     <div class="itemdescription">
-                        <h1>Čistenie</h1>
+                        <h1><?php echo $data["nazov"] ?></h1>
                         <br>
-                        <p>Od 15€</p>
+                        <p>Od <?php echo $data["cena"] ?>€</p>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="image">
-                        <img src="images/cleaning.jpg" alt="">
+            <?php
+                
+                if ($i % 2 == 1 || $i == $num_rows - 1) {
+            ?>
                     </div>
-                    <div class="itemdescription">
-                        <h1>Oprava displeja</h1>
-                        <br>
-                        <p>Od 70€</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="item">
-                    <div class="image">
-                        <img src="images/diagnosting.jpg" alt="">
-                    </div>
-                    <div class="itemdescription">
-                        <h1>Oprava mikrofónu </h1>
-                        <br>
-                        <p>Od 50€</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <img src="images/diagnosting.jpg" alt="">
-                    </div>
-                    <div class="itemdescription">
-                        <h1>Oprava základnej dosky</h1>
-                        <br>
-                        <p>Od 20€</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="item">
-                    <div class="image">
-                        <img src="images/diagnosting.jpg" alt="">
-                    </div>
-                    <div class="itemdescription">
-                        <h1>Výmena batérie</h1>
-                        <br>
-                        <p>Od 30€</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <img src="images/diagnosting.jpg" alt="">
-                    </div>
-                    <div class="itemdescription">
-                        <h1>Diagnostika</h1>
-                        <br>
-                        <p>Od 20€</p>
-                    </div>
-                </div>
-            </div>
+            <?php
+                };
+                $i++;
+            }
+            ?>
             <div class="container" style="justify-content: flex-start;">
                 <div class="item button" style="width: 150px;">
                     <a href="objednavka.html" class="link">
